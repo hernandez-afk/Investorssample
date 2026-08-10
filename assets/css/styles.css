@@ -845,7 +845,110 @@ section.block { padding: 5rem 0; }
   letter-spacing: 0.05em;
 }
 
-.doc-row__actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.doc-row__actions { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+
+.doc-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 0.5rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-grey-500);
+  cursor: pointer;
+  transition: color 0.3s var(--ease-house);
+}
+
+.doc-preview-btn:hover { color: var(--color-atari-red); }
+
+/* ---------------------------------- Document preview modal ------------------ */
+
+.doc-preview-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease-house), visibility 0.25s;
+}
+
+.doc-preview-overlay.is-open { opacity: 1; visibility: visible; }
+
+.doc-preview-modal {
+  background: var(--color-white);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  position: relative;
+  transform: translateY(10px);
+  transition: transform 0.25s var(--ease-house);
+}
+
+.doc-preview-overlay.is-open .doc-preview-modal { transform: translateY(0); }
+
+.doc-preview-modal__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: var(--color-grey-500);
+}
+
+.doc-preview-modal__close:hover { color: var(--color-atari-red); }
+
+.doc-preview-modal__eyebrow { color: var(--color-atari-red); margin: 0 0 0.6rem; }
+
+.doc-preview-modal__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  padding-right: 1.5rem;
+  line-height: 1.35;
+}
+
+.doc-preview-modal__date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-grey-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1.5rem;
+}
+
+.doc-preview-modal__date:empty { display: none; }
+
+.doc-preview-modal__page {
+  background: var(--color-off-white);
+  border: 1px solid var(--color-grey-150);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.doc-preview-modal__line { display: block; height: 8px; background: var(--color-grey-150); }
+
+.doc-preview-modal__note {
+  font-size: 0.8rem;
+  color: var(--color-grey-500);
+  margin: 0 0 1.25rem;
+}
+
+.doc-preview-modal__actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
 /* ---------------------------------- Disclaimer note ------------------------- */
 
