@@ -783,6 +783,30 @@ section.block { padding: 5rem 0; }
 
 .doc-row.is-hidden { display: none; }
 
+.doc-filter-row { margin-bottom: 1.75rem; }
+
+.doc-filter-input {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--color-grey-200);
+  border-radius: 40px;
+  width: 100%;
+  max-width: 340px;
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+
+.doc-filter-input::placeholder { color: var(--color-grey-500); }
+.doc-filter-input:focus { outline: 2px solid var(--color-black); }
+
+.doc-filter-empty {
+  display: none;
+  color: var(--color-grey-500);
+  font-size: 0.9rem;
+  padding: 1.25rem 0;
+}
+
 /* ---------------------------------- Doc list -------------------------------- */
 
 .doc-list { display: flex; flex-direction: column; }
@@ -819,6 +843,33 @@ section.block { padding: 5rem 0; }
   color: var(--color-grey-500);
   margin: 1rem 0 0;
 }
+
+.chart-canvas-wrap { position: relative; width: 100%; height: 360px; }
+.chart-canvas-wrap canvas { width: 100% !important; height: 100% !important; display: block; }
+
+.chart-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  padding: 0.55rem 0.75rem;
+  transform: translate(-50%, -100%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.15s var(--ease-house);
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.chart-tooltip.is-visible { opacity: 1; }
+
+.chart-legend { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 1.25rem; font-size: 0.82rem; }
+.chart-legend__item { display: flex; align-items: center; gap: 0.5rem; color: var(--color-grey-700); }
+.chart-legend__swatch { width: 10px; height: 10px; flex: 0 0 auto; border-radius: 2px; }
 
 /* ---------------------------------- Data tables ----------------------------- */
 

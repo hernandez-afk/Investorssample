@@ -53,34 +53,50 @@
 
       <h2 class="subsection-heading">Share Capital &amp; Voting Rights</h2>
       <p class="chart-disclaimer" style="margin-top:-1.75rem;margin-bottom:1.25rem;">Monthly information on the total number of voting rights and shares comprising Atari's share capital, as disclosed by the Company.</p>
-      <div class="table-scroll">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>As of</th>
-              <th>Shares Comprising Capital</th>
-              <th>Theoretical Voting Rights</th>
-              <th>Actual Voting Rights</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>March 31, 2026</td><td>559,263,374</td><td>607,109,144</td><td>603,855,718</td></tr>
-            <tr><td>February 29, 2026</td><td>559,212,476</td><td>607,060,556</td><td>603,800,130</td></tr>
-            <tr><td>January 30, 2026</td><td>559,123,654</td><td>606,964,831</td><td>603,711,405</td></tr>
-            <tr><td>December 31, 2025</td><td>559,117,664</td><td>606,958,841</td><td>603,705,415</td></tr>
-            <tr><td>November 30, 2025</td><td>559,103,439</td><td>606,874,547</td><td>603,621,121</td></tr>
-            <tr><td>October 31, 2025</td><td>559,082,939</td><td>595,266,311</td><td>592,012,885</td></tr>
-            <tr><td>September 30, 2025</td><td>559,082,939</td><td>595,266,910</td><td>592,013,484</td></tr>
-            <tr><td>August 31, 2025</td><td>559,082,939</td><td>595,268,160</td><td>592,014,734</td></tr>
-            <tr><td>July 31, 2025</td><td>461,364,752</td><td>497,549,973</td><td>494,296,547</td></tr>
-            <tr><td>June 30, 2025</td><td>461,364,752</td><td>497,549,973</td><td>494,296,547</td></tr>
-            <tr><td>May 31, 2025</td><td>460,983,766</td><td>496,194,987</td><td>492,941,561</td></tr>
-            <tr><td>April 30, 2025</td><td>460,982,859</td><td>463,053,087</td><td>459,799,661</td></tr>
-            <tr><td>March 31, 2025</td><td>460,979,181</td><td>463,051,183</td><td>459,797,757</td></tr>
-            <tr><td>February 28, 2025</td><td>460,977,073</td><td>463,054,489</td><td>459,801,063</td></tr>
-            <tr><td>January 31, 2025</td><td>460,976,456</td><td>463,053,872</td><td>459,800,446</td></tr>
-          </tbody>
-        </table>
+
+      <div class="filter-tabs" id="votingViewTabs">
+        <button class="filter-tab is-active" data-view="table">Table</button>
+        <button class="filter-tab" data-view="graph">Graph</button>
+      </div>
+
+      <div id="votingTableView">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>As of</th>
+                <th>Shares Comprising Capital</th>
+                <th>Theoretical Voting Rights</th>
+                <th>Actual Voting Rights</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>March 31, 2026</td><td>559,263,374</td><td>607,109,144</td><td>603,855,718</td></tr>
+              <tr><td>February 29, 2026</td><td>559,212,476</td><td>607,060,556</td><td>603,800,130</td></tr>
+              <tr><td>January 30, 2026</td><td>559,123,654</td><td>606,964,831</td><td>603,711,405</td></tr>
+              <tr><td>December 31, 2025</td><td>559,117,664</td><td>606,958,841</td><td>603,705,415</td></tr>
+              <tr><td>November 30, 2025</td><td>559,103,439</td><td>606,874,547</td><td>603,621,121</td></tr>
+              <tr><td>October 31, 2025</td><td>559,082,939</td><td>595,266,311</td><td>592,012,885</td></tr>
+              <tr><td>September 30, 2025</td><td>559,082,939</td><td>595,266,910</td><td>592,013,484</td></tr>
+              <tr><td>August 31, 2025</td><td>559,082,939</td><td>595,268,160</td><td>592,014,734</td></tr>
+              <tr><td>July 31, 2025</td><td>461,364,752</td><td>497,549,973</td><td>494,296,547</td></tr>
+              <tr><td>June 30, 2025</td><td>461,364,752</td><td>497,549,973</td><td>494,296,547</td></tr>
+              <tr><td>May 31, 2025</td><td>460,983,766</td><td>496,194,987</td><td>492,941,561</td></tr>
+              <tr><td>April 30, 2025</td><td>460,982,859</td><td>463,053,087</td><td>459,799,661</td></tr>
+              <tr><td>March 31, 2025</td><td>460,979,181</td><td>463,051,183</td><td>459,797,757</td></tr>
+              <tr><td>February 28, 2025</td><td>460,977,073</td><td>463,054,489</td><td>459,801,063</td></tr>
+              <tr><td>January 31, 2025</td><td>460,976,456</td><td>463,053,872</td><td>459,800,446</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="votingGraphView" hidden>
+        <div class="chart-canvas-wrap">
+          <canvas id="votingChart"></canvas>
+          <div class="chart-tooltip" id="votingTooltip"></div>
+        </div>
+        <div class="chart-legend" id="votingLegend"></div>
       </div>
 
     </div>
@@ -91,5 +107,6 @@
 
 <script src="assets/js/include.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/voting-rights-chart.js"></script>
 </body>
 </html>
