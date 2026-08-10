@@ -87,14 +87,7 @@ img { max-width: 100%; display: block; }
   flex: 0 0 auto;
 }
 
-.logo svg { height: 22px; width: auto; }
-
-.logo__word {
-  font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: 0.01em;
-  color: var(--color-ink);
-}
+.logo__img { height: 22px; width: auto; }
 
 .logo__divider {
   width: 1px;
@@ -433,7 +426,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero__mark { justify-self: center; }
-.hero__mark svg { width: 100%; max-width: 320px; height: auto; }
+.hero__mark img { width: 100%; max-width: 280px; height: auto; }
 
 /* ---------------------------------- Mission ------------------------------ */
 
