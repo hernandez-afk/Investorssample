@@ -56,8 +56,11 @@
     const pad = { top: 20, right: 16, bottom: 28, left: 56 };
     let geo = null;
 
-    function draw() {
-      const { ctx, width, height } = setupCanvas(canvas);
+    // Renders the axes + lines onto an already-sized canvas context. Never
+    // resizes the canvas itself — resizing (even to the same value) wipes
+    // the drawing buffer, which is what caused the chart to blank out on
+    // every hover when this was previously called a second time per move.
+    function renderBase(ctx, width, height) {
       ctx.clearRect(0, 0, width, height);
 
       const plotW = width - pad.left - pad.right;
@@ -119,6 +122,11 @@
       geo = { x, y, pad, plotW, plotH };
     }
 
+    function draw() {
+      const { ctx, width, height } = setupCanvas(canvas);
+      renderBase(ctx, width, height);
+    }
+
     function handleMove(evt) {
       if (!geo) return;
       const rect = canvas.getBoundingClientRect();
@@ -129,8 +137,9 @@
       idx = Math.max(0, Math.min(DATA.length - 1, idx));
       const point = DATA[idx];
 
-      draw();
-      const { ctx } = setupCanvas(canvas);
+      const { ctx, width, height } = setupCanvas(canvas);
+      renderBase(ctx, width, height);
+
       const px = geo.x(idx);
       ctx.beginPath();
       ctx.moveTo(px, geo.pad.top);

@@ -25,13 +25,20 @@
   <section class="page-content">
     <div class="container">
 
-      <div class="doc-filter-row">
-        <input type="text" class="doc-filter-input" placeholder="Filter by date (e.g. 2026, 2020 – 2021)" data-doc-filter="page" aria-label="Filter financial reports by date">
+      <div class="year-filter" data-year-filter="page">
+        <div class="year-filter__field">
+          <span class="year-filter__label">From</span>
+          <select class="year-filter__select" data-role="from" aria-label="From year"></select>
+        </div>
+        <div class="year-filter__field">
+          <span class="year-filter__label">Until</span>
+          <select class="year-filter__select" data-role="until" aria-label="Until year"></select>
+        </div>
       </div>
 
       <h2 class="subsection-heading">2025 &ndash; 2026</h2>
       <div class="doc-list">
-        <div class="doc-row">
+        <div class="doc-row" data-year="2026">
           <div class="doc-row__meta">
             <span class="doc-row__title">2026 Annual Financial Report</span>
             <span class="doc-row__date">Published 08.05.2026</span>
@@ -40,7 +47,7 @@
             <a class="pill-btn pill-btn--sm" href="#">EN &middot; PDF</a>
           </div>
         </div>
-        <div class="doc-row">
+        <div class="doc-row" data-year="2025">
           <div class="doc-row__meta">
             <span class="doc-row__title">Half-Year Financial Report as of September 30, 2025</span>
             <span class="doc-row__date">Published 01.23.2026</span>
@@ -53,15 +60,15 @@
 
       <h2 class="subsection-heading" style="margin-top:3rem;">Archive by Fiscal Year</h2>
       <div class="doc-list">
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2024 &ndash; 2025</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2023 &ndash; 2024</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2022 &ndash; 2023</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2021 &ndash; 2022</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2020 &ndash; 2021</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2019 &ndash; 2020</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2018 &ndash; 2019</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2017 &ndash; 2018</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
-        <div class="doc-row"><div class="doc-row__meta"><span class="doc-row__title">2016 &ndash; 2017</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2025"><div class="doc-row__meta"><span class="doc-row__title">2024 &ndash; 2025</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2024"><div class="doc-row__meta"><span class="doc-row__title">2023 &ndash; 2024</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2023"><div class="doc-row__meta"><span class="doc-row__title">2022 &ndash; 2023</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2022"><div class="doc-row__meta"><span class="doc-row__title">2021 &ndash; 2022</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2021"><div class="doc-row__meta"><span class="doc-row__title">2020 &ndash; 2021</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2020"><div class="doc-row__meta"><span class="doc-row__title">2019 &ndash; 2020</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2019"><div class="doc-row__meta"><span class="doc-row__title">2018 &ndash; 2019</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2018"><div class="doc-row__meta"><span class="doc-row__title">2017 &ndash; 2018</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
+        <div class="doc-row" data-year="2017"><div class="doc-row__meta"><span class="doc-row__title">2016 &ndash; 2017</span></div><div class="doc-row__actions"><a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">View filings</a></div></div>
       </div>
 
     </div>

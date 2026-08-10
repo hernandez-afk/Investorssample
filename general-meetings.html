@@ -26,11 +26,18 @@
     <div class="container content-grid">
       <div>
         <h2 class="subsection-heading">Meetings</h2>
-        <div class="doc-filter-row">
-          <input type="text" class="doc-filter-input" placeholder="Filter by date (e.g. 2024, September 2023)" data-doc-filter="page" aria-label="Filter meetings by date">
+        <div class="year-filter" data-year-filter="page">
+          <div class="year-filter__field">
+            <span class="year-filter__label">From</span>
+            <select class="year-filter__select" data-role="from" aria-label="From year"></select>
+          </div>
+          <div class="year-filter__field">
+            <span class="year-filter__label">Until</span>
+            <select class="year-filter__select" data-role="until" aria-label="Until year"></select>
+          </div>
         </div>
         <div class="doc-list">
-          <div class="doc-row">
+          <div class="doc-row" data-year="2026">
             <div class="doc-row__meta">
               <span class="doc-row__title">May 27, 2026 &mdash; Combined General Meeting</span>
             </div>
@@ -39,7 +46,7 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
-          <div class="doc-row">
+          <div class="doc-row" data-year="2025">
             <div class="doc-row__meta">
               <span class="doc-row__title">September 22, 2025 &mdash; Combined General Meeting</span>
             </div>
@@ -48,7 +55,7 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
-          <div class="doc-row">
+          <div class="doc-row" data-year="2024">
             <div class="doc-row__meta">
               <span class="doc-row__title">September 24, 2024 &mdash; Combined General Meeting</span>
             </div>
@@ -57,7 +64,7 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
-          <div class="doc-row">
+          <div class="doc-row" data-year="2023">
             <div class="doc-row__meta">
               <span class="doc-row__title">September 29, 2023 &mdash; Combined General Meeting</span>
             </div>
@@ -66,7 +73,7 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
-          <div class="doc-row">
+          <div class="doc-row" data-year="2022">
             <div class="doc-row__meta">
               <span class="doc-row__title">September 27, 2022 &mdash; Combined General Meeting</span>
             </div>
@@ -75,7 +82,7 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
-          <div class="doc-row">
+          <div class="doc-row" data-year="2022">
             <div class="doc-row__meta">
               <span class="doc-row__title">April 20, 2022 &mdash; Ordinary General Meeting</span>
             </div>
@@ -84,7 +91,7 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
-          <div class="doc-row">
+          <div class="doc-row" data-year="2021">
             <div class="doc-row__meta">
               <span class="doc-row__title">November 30, 2021 &mdash; Combined General Meeting</span>
             </div>
@@ -93,7 +100,7 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
-          <div class="doc-row">
+          <div class="doc-row" data-year="2021">
             <div class="doc-row__meta">
               <span class="doc-row__title">February 15, 2021 &mdash; Combined General Meeting</span>
             </div>
@@ -102,9 +109,71 @@
               <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
             </div>
           </div>
+          <div class="doc-row" data-year="2019">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">September 30, 2019 &mdash; Combined General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
+          <div class="doc-row" data-year="2018">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">September 28, 2018 &mdash; Combined General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
+          <div class="doc-row" data-year="2017">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">September 29, 2017 &mdash; Combined General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
+          <div class="doc-row" data-year="2016">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">September 30, 2016 &mdash; Combined General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
+          <div class="doc-row" data-year="2016">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">November 15, 2016 &mdash; Ordinary General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
+          <div class="doc-row" data-year="2015">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">September 30, 2015 &mdash; Combined General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
+          <div class="doc-row" data-year="2014">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">September 30, 2014 &mdash; Combined General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
+          <div class="doc-row" data-year="2013">
+            <div class="doc-row__meta">
+              <span class="doc-row__title">December 11, 2013 &mdash; Combined General Meeting</span>
+            </div>
+            <div class="doc-row__actions">
+              <a class="pill-btn pill-btn--sm pill-btn--ghost" href="#">FR &middot; PDF</a>
+            </div>
+          </div>
         </div>
-
-        <p class="chart-disclaimer" style="margin:0.5rem 0 0;">Archive continues back to 2013, including meetings on 09.30.2019, 09.28.2018, 09.29.2017, 09.30.2016, 11.15.2016 (Ordinary), 09.30.2015, 09.30.2014, and 12.11.2013.</p>
       </div>
 
       <aside>
