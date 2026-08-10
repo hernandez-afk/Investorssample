@@ -41,10 +41,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!event.target.closest('.lang-toggle') && langToggle) langToggle.classList.remove('is-open');
   });
 
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileNav.querySelectorAll('.mobile-nav__lang').forEach((option) => {
+      option.addEventListener('click', () => {
+        mobileNav.querySelectorAll('.mobile-nav__lang').forEach((opt) => opt.classList.remove('is-active'));
+        option.classList.add('is-active');
+      });
+    });
+  }
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       closeAllNav(null);
       if (langToggle) langToggle.classList.remove('is-open');
+      if (navToggle && mobileNav && mobileNav.classList.contains('is-open')) {
+        mobileNav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
     }
   });
 });
