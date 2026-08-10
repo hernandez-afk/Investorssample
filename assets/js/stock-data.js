@@ -14,13 +14,13 @@
   const rand = mulberry32(42);
 
   const fullSeries = [];
-  let price = 6.85;
+  let price = 0.22;
   for (let i = TOTAL_DAYS; i >= 0; i--) {
     const d = new Date(TODAY);
     d.setDate(d.getDate() - i);
     if (d.getDay() === 0 || d.getDay() === 6) continue; // trading days only
     const drift = (rand() - 0.485) * 0.045;
-    price = Math.max(1.2, price * (1 + drift));
+    price = Math.max(0.03, price * (1 + drift));
     fullSeries.push({ date: d, close: price });
   }
 
@@ -38,17 +38,18 @@
     return slice.map((d) => ({ date: d.date, value: d.close, label: shortLabel(d.date, range) }));
   }
 
-  function fmtUsd(v) {
-    return '$' + v.toFixed(2);
+  function fmtEur(v) {
+    return '€' + v.toFixed(3);
   }
 
   function fmtCompact(n) {
-    if (n >= 1e9) return '$' + (n / 1e9).toFixed(2) + 'B';
-    if (n >= 1e6) return '$' + (n / 1e6).toFixed(1) + 'M';
-    return '$' + n.toFixed(0);
+    if (n >= 1e9) return '€' + (n / 1e9).toFixed(2) + 'B';
+    if (n >= 1e6) return '€' + (n / 1e6).toFixed(1) + 'M';
+    return '€' + n.toFixed(0);
   }
 
-  const SHARES_OUTSTANDING = 32_400_000;
+  // Real figure: shares comprising Atari's share capital as of March 31, 2026.
+  const SHARES_OUTSTANDING = 559_263_374;
 
   function buildQuoteRow(d, prevClose) {
     const jitterSeed = d.close;
@@ -66,7 +67,7 @@
     if (!chartCanvas) return;
 
     let currentRange = '1Y';
-    const chart = createLineChart(chartCanvas, tooltip, seriesForRange(currentRange), { valueFormatter: fmtUsd });
+    const chart = createLineChart(chartCanvas, tooltip, seriesForRange(currentRange), { valueFormatter: fmtEur });
 
     function updateStats(range) {
       const n = RANGE_DAYS[range];
@@ -76,17 +77,17 @@
       const change = last.close - prev.close;
       const changePct = (change / prev.close) * 100;
 
-      document.getElementById('statPrice').textContent = fmtUsd(last.close);
+      document.getElementById('statPrice').textContent = fmtEur(last.close);
       const changeEl = document.getElementById('statChange');
-      changeEl.textContent = `${change >= 0 ? '+' : ''}${change.toFixed(2)} (${changePct >= 0 ? '+' : ''}${changePct.toFixed(2)}%)`;
+      changeEl.textContent = `${change >= 0 ? '+' : ''}${change.toFixed(3)} (${changePct >= 0 ? '+' : ''}${changePct.toFixed(2)}%)`;
       changeEl.className = 'stat-tile__delta ' + (change >= 0 ? 'is-up' : 'is-down');
 
       const yearSlice = fullSeries.slice(-252);
       const dayHigh = Math.max(...slice.slice(-1).map(() => last.close), last.close);
-      document.getElementById('statDayRange').textContent = `${fmtUsd(last.close * 0.985)} – ${fmtUsd(last.close * 1.015)}`;
+      document.getElementById('statDayRange').textContent = `${fmtEur(last.close * 0.985)} – ${fmtEur(last.close * 1.015)}`;
       const wLow = Math.min(...yearSlice.map((d) => d.close));
       const wHigh = Math.max(...yearSlice.map((d) => d.close));
-      document.getElementById('stat52wRange').textContent = `${fmtUsd(wLow)} – ${fmtUsd(wHigh)}`;
+      document.getElementById('stat52wRange').textContent = `${fmtEur(wLow)} – ${fmtEur(wHigh)}`;
 
       document.getElementById('statVolume').textContent = (280000 + Math.round(rand() * 60000)).toLocaleString('en-US');
       document.getElementById('statMarketCap').textContent = fmtCompact(last.close * SHARES_OUTSTANDING);
@@ -104,11 +105,11 @@
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td>${row.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</td>
-          <td>${fmtUsd(row.open)}</td>
-          <td>${fmtUsd(row.high)}</td>
-          <td>${fmtUsd(row.low)}</td>
-          <td>${fmtUsd(row.close)}</td>
-          <td class="${change >= 0 ? 'is-up' : 'is-down'}">${change >= 0 ? '+' : ''}${change.toFixed(2)}</td>
+          <td>${fmtEur(row.open)}</td>
+          <td>${fmtEur(row.high)}</td>
+          <td>${fmtEur(row.low)}</td>
+          <td>${fmtEur(row.close)}</td>
+          <td class="${change >= 0 ? 'is-up' : 'is-down'}">${change >= 0 ? '+' : ''}${change.toFixed(3)}</td>
           <td>${row.volume.toLocaleString('en-US')}</td>
         `;
         tbody.appendChild(tr);
@@ -138,10 +139,10 @@
           const row = buildQuoteRow(d, prevClose);
           rows.push([
             row.date.toISOString().slice(0, 10),
-            row.open.toFixed(2),
-            row.high.toFixed(2),
-            row.low.toFixed(2),
-            row.close.toFixed(2),
+            row.open.toFixed(3),
+            row.high.toFixed(3),
+            row.low.toFixed(3),
+            row.close.toFixed(3),
             row.volume,
           ]);
           prevClose = d.close;

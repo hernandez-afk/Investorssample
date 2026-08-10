@@ -953,6 +953,19 @@ section.block { padding: 5rem 0; }
   color: var(--color-grey-500);
 }
 
+.notice-box {
+  background: var(--color-grey-100);
+  border-left: 3px solid var(--color-atari-red);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--color-grey-700);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.notice-box p { margin: 0 0 0.75rem; }
+.notice-box p:last-child { margin-bottom: 0; }
+
 .info-card dl { margin: 0; }
 .info-card dt { font-size: 0.8rem; color: var(--color-grey-500); margin: 0.9rem 0 0.15rem; }
 .info-card dt:first-child { margin-top: 0; }
@@ -975,6 +988,26 @@ section.block { padding: 5rem 0; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+}
+
+.board-card { display: flex; gap: 1.5rem; }
+.board-card__photo { flex: 0 0 110px; height: 110px; background: var(--color-grey-200); }
+.board-card__name { font-weight: 600; margin: 0 0 0.15rem; font-size: 1.05rem; }
+.board-card__role {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-atari-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.6rem;
+}
+.board-card__bio { font-size: 0.85rem; color: var(--color-grey-700); line-height: 1.55; margin: 0 0 0.5rem; }
+.board-card__meta { font-size: 0.75rem; color: var(--color-grey-500); font-family: var(--font-mono); margin: 0; }
 
 /* ---------------------------------- Timeline -------------------------------- */
 
