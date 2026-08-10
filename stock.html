@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock | Atari Investors</title>
+<meta name="description" content="Atari share price history and trading data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header" data-include="assets/partials/header.html"></header>
+
+<main>
+  <section class="page-banner">
+    <div class="container">
+      <p class="overline page-banner__eyebrow">Shares</p>
+      <h1>Stock</h1>
+      <p class="lede">Share price history and trading data for Atari. All figures on this page are sample data for design purposes and do not reflect real trading activity.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+
+      <div class="stat-grid" id="statGrid">
+        <div class="stat-tile">
+          <span class="stat-tile__label">Last Price</span>
+          <span class="stat-tile__value" id="statPrice">&mdash;</span>
+          <span class="stat-tile__delta" id="statChange">&mdash;</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">Day Range</span>
+          <span class="stat-tile__value" id="statDayRange" style="font-size:1.15rem;">&mdash;</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">52-Week Range</span>
+          <span class="stat-tile__value" id="stat52wRange" style="font-size:1.15rem;">&mdash;</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">Volume</span>
+          <span class="stat-tile__value" id="statVolume">&mdash;</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">Market Cap</span>
+          <span class="stat-tile__value" id="statMarketCap">&mdash;</span>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card__head">
+          <div>
+            <p class="chart-card__title">Share Price</p>
+            <p class="chart-card__subtitle">Atari Inc. &middot; sample ticker ATRI</p>
+          </div>
+          <div class="range-toggle" id="rangeToggle">
+            <button class="range-btn" data-range="1M">1M</button>
+            <button class="range-btn" data-range="3M">3M</button>
+            <button class="range-btn" data-range="6M">6M</button>
+            <button class="range-btn is-active" data-range="1Y">1Y</button>
+            <button class="range-btn" data-range="5Y">5Y</button>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="stockChart"></canvas>
+          <div class="chart-tooltip" id="stockTooltip"></div>
+        </div>
+        <p class="chart-disclaimer">Illustrative data for design purposes only &mdash; not actual trading data.</p>
+      </div>
+
+      <h2 class="subsection-heading">Recent Quotes</h2>
+      <div class="table-scroll">
+        <table class="data-table" id="quoteTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Open</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Close</th>
+              <th>Change</th>
+              <th>Volume</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <a class="pill-btn pill-btn--ghost" href="#" id="downloadCsv">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1V9M7 9L4 6M7 9L10 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 11V13H13V11" stroke="currentColor" stroke-width="1.3"/></svg>
+        Download full history (CSV)
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" data-include="assets/partials/footer.html"></footer>
+
+<script src="assets/js/include.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/stock-data.js"></script>
+</body>
+</html>

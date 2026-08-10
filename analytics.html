@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytics | Atari Investors</title>
+<meta name="description" content="Atari company performance analytics: revenue by segment, net bookings trend, and regional split.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header" data-include="assets/partials/header.html"></header>
+
+<main>
+  <section class="page-banner">
+    <div class="container">
+      <p class="overline page-banner__eyebrow">Shares</p>
+      <h1>Analytics</h1>
+      <p class="lede">Company performance analytics and key business metrics. All figures on this page are sample data for design purposes and do not reflect actual results.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+
+      <div class="stat-grid">
+        <div class="stat-tile">
+          <span class="stat-tile__label">Net Bookings (Q)</span>
+          <span class="stat-tile__value">$18.4M</span>
+          <span class="stat-tile__delta is-up">+6.2% YoY</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">Adjusted EBITDA</span>
+          <span class="stat-tile__value">$4.1M</span>
+          <span class="stat-tile__delta is-up">+11.4% YoY</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">EBITDA Margin</span>
+          <span class="stat-tile__value">22.3%</span>
+          <span class="stat-tile__delta is-up">+140 bps</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">Recurring Revenue</span>
+          <span class="stat-tile__value">61%</span>
+          <span class="stat-tile__delta is-up">+4 pts YoY</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-tile__label">Monthly Active Users</span>
+          <span class="stat-tile__value">3.2M</span>
+          <span class="stat-tile__delta is-down">&minus;1.8% YoY</span>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card__head">
+          <div>
+            <p class="chart-card__title">Revenue by Segment</p>
+            <p class="chart-card__subtitle">Quarterly, last 4 quarters &middot; illustrative</p>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap" style="height:320px;">
+          <canvas id="segmentChart"></canvas>
+        </div>
+        <div class="chart-legend" id="segmentLegend"></div>
+        <p class="chart-disclaimer">Illustrative data for design purposes only &mdash; not actual financial results.</p>
+      </div>
+
+      <div class="chart-grid-2">
+        <div class="chart-card">
+          <div class="chart-card__head">
+            <div>
+              <p class="chart-card__title">Net Bookings Trend</p>
+              <p class="chart-card__subtitle">Trailing 8 quarters</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap" style="height:300px;">
+            <canvas id="bookingsChart"></canvas>
+            <div class="chart-tooltip" id="bookingsTooltip"></div>
+          </div>
+          <p class="chart-disclaimer">Illustrative data for design purposes only.</p>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card__head">
+            <div>
+              <p class="chart-card__title">Net Bookings by Region</p>
+              <p class="chart-card__subtitle">Trailing twelve months</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrap" style="height:300px;">
+            <canvas id="regionDonut"></canvas>
+          </div>
+          <div class="chart-legend" id="regionLegend"></div>
+          <p class="chart-disclaimer">Illustrative data for design purposes only.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" data-include="assets/partials/footer.html"></footer>
+
+<script src="assets/js/include.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/analytics-data.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initHeaderNav() {
   const navItems = document.querySelectorAll('.primary-nav__item');
   const langToggle = document.querySelector('.lang-toggle');
 
@@ -70,4 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-});
+
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.mega-menu__link, .mobile-nav__panel a').forEach((link) => {
+    if (link.getAttribute('href') === path) link.classList.add('is-current');
+  });
+}
+
+document.addEventListener('partials:loaded', initHeaderNav);
