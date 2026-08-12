@@ -441,10 +441,9 @@ img { max-width: 100%; display: block; }
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 2rem;
-  display: grid;
-  grid-template-columns: 0.9fr 2fr;
-  gap: 2rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 .mission h2 {
@@ -457,6 +456,7 @@ img { max-width: 100%; display: block; }
   margin: 0;
   color: var(--color-grey-200);
   font-size: 1rem;
+  max-width: 70ch;
 }
 
 .mission a { color: var(--color-white); text-decoration: underline; transition: color 0.3s var(--ease-house); }
@@ -1148,7 +1148,6 @@ section.block { padding: 5rem 0; }
   }
   .hero__inner { grid-template-columns: 1fr; text-align: center; }
   .hero p.lede { margin: 0 auto; }
-  .mission__inner { grid-template-columns: 1fr; }
   .financial-results__grid { grid-template-columns: 1fr; }
   .news-grid { grid-template-columns: 1fr; }
   .priorities__grid { grid-template-columns: 1fr; }
