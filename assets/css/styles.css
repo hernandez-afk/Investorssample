@@ -456,7 +456,6 @@ img { max-width: 100%; display: block; }
   margin: 0;
   color: var(--color-grey-200);
   font-size: 1rem;
-  max-width: 70ch;
 }
 
 .mission a { color: var(--color-white); text-decoration: underline; transition: color 0.3s var(--ease-house); }
