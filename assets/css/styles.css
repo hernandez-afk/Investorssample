@@ -1063,7 +1063,14 @@ section.block { padding: 5rem 0; }
   gap: 2rem 1.5rem;
 }
 
-.team-card__photo { width: 100%; height: 220px; background: var(--color-grey-200); }
+.team-card__photo {
+  width: 100%;
+  height: 220px;
+  background: var(--color-grey-200);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .team-card__name { font-weight: 600; margin: 1rem 0 0.15rem; font-size: 1.02rem; }
 .team-card__role {
   font-family: var(--font-mono);
@@ -1080,7 +1087,14 @@ section.block { padding: 5rem 0; }
 }
 
 .board-card { display: flex; gap: 1.5rem; }
-.board-card__photo { flex: 0 0 110px; height: 110px; background: var(--color-grey-200); }
+.board-card__photo {
+  flex: 0 0 110px;
+  height: 110px;
+  background: var(--color-grey-200);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .board-card__name { font-weight: 600; margin: 0 0 0.15rem; font-size: 1.05rem; }
 .board-card__role {
   font-family: var(--font-mono);
