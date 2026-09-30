@@ -433,7 +433,8 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2.5rem, 2rem + 3vw, 4.5rem);
   font-weight: 400;
   line-height: 1.02;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
   margin: 0 0 1.25rem;
 }
 
@@ -468,6 +469,8 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
   margin: 0;
 }
 
@@ -725,7 +728,8 @@ section.block { padding: 5rem 0; }
   font-family: var(--font-display);
   font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
   line-height: 1.05;
   margin: 0 0 0.6rem;
   padding-bottom: 0.5rem;
@@ -746,6 +750,8 @@ section.block { padding: 5rem 0; }
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
   margin: 0 0 1.5rem;
 }
 
