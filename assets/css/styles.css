@@ -428,6 +428,29 @@ img { max-width: 100%; display: block; }
   margin: 0 0 0.75rem;
 }
 
+.hero__tickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.75rem 0 0;
+}
+
+.ticker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-grey-200);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-grey-700);
+}
+
+.ticker-pill strong { color: var(--color-atari-red); font-weight: 600; }
+
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 2rem + 3vw, 4.5rem);
@@ -488,10 +511,12 @@ img { max-width: 100%; display: block; }
 section.block { padding: 5rem 0; }
 
 .section-heading {
+  font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 400;
+  text-transform: uppercase;
   margin: 0 0 2.5rem;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.005em;
 }
 
 /* Financial results */
@@ -651,33 +676,33 @@ section.block { padding: 5rem 0; }
 /* Key priorities */
 
 .priorities {
-  background: var(--color-black);
-  color: var(--color-white);
+  background: var(--color-off-white);
+  color: var(--color-ink);
   padding: 5rem 0;
 }
 
-.priorities .section-heading { color: var(--color-white); }
-
 .priorities__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
 }
 
-.priorities__card {
-  padding: 1.75rem;
+.priorities__icon {
+  color: var(--color-ink);
+  margin-bottom: 1.25rem;
+}
+
+.priorities__card h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+}
+
+.priorities__card p {
   font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-.priorities__card--accent {
-  background: var(--color-atari-red);
-  color: var(--color-white);
-}
-
-.priorities__card--plain {
-  border: 1px solid var(--color-grey-700);
-  color: var(--color-grey-200);
+  line-height: 1.6;
+  color: var(--color-grey-700);
+  margin: 0;
 }
 
 /* Footer */
