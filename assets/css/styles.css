@@ -27,6 +27,7 @@
 
   --ease-house: cubic-bezier(0.22, 1, 0.36, 1);
   --max-width: 1600px;
+  --hero-title-size: clamp(2.5rem, 2rem + 3vw, 4.5rem);
 }
 
 @font-face {
@@ -102,9 +103,15 @@ img { max-width: 100%; display: block; }
   gap: 0.6rem;
   text-decoration: none;
   flex: 0 0 auto;
+  font-size: 1.05rem;
 }
 
-.logo__img { height: 22px; width: auto; }
+.logo__mark {
+  display: inline-flex;
+  padding: 0.4em;
+}
+
+.logo__img { height: 22px; width: auto; display: block; }
 
 .logo__divider {
   width: 1px;
@@ -453,7 +460,7 @@ img { max-width: 100%; display: block; }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  font-size: var(--hero-title-size);
   font-weight: 400;
   line-height: 1.02;
   letter-spacing: 0.005em;
@@ -468,8 +475,12 @@ img { max-width: 100%; display: block; }
   margin: 0;
 }
 
-.hero__mark { justify-self: center; }
-.hero__mark img { width: 100%; max-width: 460px; height: auto; }
+.hero__mark {
+  justify-self: center;
+  font-size: var(--hero-title-size);
+  padding: 0.35em;
+}
+.hero__mark img { width: 100%; max-width: 460px; height: auto; display: block; }
 
 /* ---------------------------------- Mission ------------------------------ */
 
