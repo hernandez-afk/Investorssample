@@ -103,15 +103,9 @@ img { max-width: 100%; display: block; }
   gap: 0.6rem;
   text-decoration: none;
   flex: 0 0 auto;
-  font-size: 1.05rem;
 }
 
-.logo__mark {
-  display: inline-flex;
-  padding: 0.4em;
-}
-
-.logo__img { height: 22px; width: auto; display: block; }
+.logo__img { height: 22px; width: auto; }
 
 .logo__divider {
   width: 1px;
